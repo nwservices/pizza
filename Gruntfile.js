@@ -88,8 +88,7 @@ module.exports = function(grunt) {
 
     open: {
       all: {
-        path: 'http://localhost:<%= express.all.options.port%>',
-        app: 'Firefox'
+        path: 'http://localhost:<%= express.all.options.port%>'
       }
     },
     

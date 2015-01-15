@@ -1,6 +1,8 @@
+dist/
 *.DS_Store
 bower_components/
 node_modules/
 .sass-cache/
 css/.sass-cache/
 css/main.css
+npm-debug.log
