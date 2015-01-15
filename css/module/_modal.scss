@@ -1,0 +1,90 @@
+.modal-content {
+	display: none;
+}
+
+.modal-container {
+	opacity: 0;
+	transform: scale(0.95);
+	position: fixed;
+	top: -500px;
+	bottom: -500px;
+	left: -500px;
+	right: -500px;
+	z-index: 10000;
+	transition: opacity 0.6s $standard-ease, transform 0.6s $standard-ease;
+	background-color: rgba(darken($color-three, 5%), .94);
+
+	@include bp-baby-bear {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.modal-content {
+		display: block;
+	}
+
+}
+
+.modal-container.is-visible {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.modal-window {
+	background-color: #FFF;
+	position: fixed;
+	
+	width: 700px;
+	height: 300px;
+
+	top: 50%;
+	left: 50%;
+
+	margin: -150px 0 0 -350px;
+
+	border-radius: 10px;
+
+	@include bp-baby-bear {
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		margin: 0;
+		width: auto;
+		height: auto;
+		border-radius: 0;
+	}
+}
+
+
+.modal-window-inner {
+	padding: 40px 20px;
+}
+
+.modal-close-x {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	display: inline-block;
+	cursor: pointer;
+	font-size: 118%;
+	border-radius: 50%;
+	transition: .2s all $standard-ease;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+
+	&:hover {
+		background-color: $color-one;
+		color: #FFF;
+	}
+
+}
+
+body.is-locked,
+html.is-locked {
+	overflow: hidden;
+}

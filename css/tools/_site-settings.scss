@@ -1,0 +1,32 @@
+/* Layout and Size */
+$vertical-spacing: 20px;
+$max-width: 1400px;
+$page-width: 930px;
+$page-gutter: 20px;
+$page-gutter-hifi: 30px;
+
+/* Misc CSS */
+$standard-ease: cubic-bezier(0.66, 0, 0.41, 1);
+
+/* Susy */
+$susy: (
+	gutters: .4,
+);
+
+/* Typography */
+$base-font: 'Source Sans Pro', Helvetica, sans-serif;
+
+/* Color Names */
+$red: #8a1213;
+$yellow-orange: #dd912c;
+$muted-green: #3f4f23;
+$light-gray: #E5E5E5;
+$dark-gray: #333;
+
+
+/* Color Settings */
+$page-bg: #FFF;
+$text-color: #000;
+$color-one: $red;
+$color-two: $yellow-orange;
+$color-three: $muted-green;

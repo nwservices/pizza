@@ -1,0 +1,193 @@
+.cards {
+	@include container;
+}
+
+.card-container {
+
+	@include bp-papa-bear {
+		@include gallery(4 of 12);
+	}
+
+	@include bp-goldilocks {
+		@include gallery(6 of 12);
+	}
+
+	height: 330px;
+	position: relative;
+	perspective: 800px;
+	margin-bottom: gutter(12);
+
+	@include bp-baby-bear {
+		@include vertical-spacing(1);
+	}
+
+}
+
+.card {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	transition: transform .66s ease-in-out;
+	transform-origin: right center;
+}
+
+.card-brad .card-front-inner,
+.card-brad .card-photo {
+	background: url(../img/about-brad.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.card-duck .card-front-inner,
+.card-duck .card-photo {
+	background: url(../img/about-duck.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.card-cat .card-front-inner,
+.card-cat .card-photo {
+	background: url(../img/about-cat.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.card-bee .card-front-inner,
+.card-bee .card-photo {
+	background: url(../img/about-bee.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.card-squirrel .card-front-inner,
+.card-squirrel .card-photo {
+	background: url(../img/about-squirrel.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.card-reptile .card-front-inner,
+.card-reptile .card-photo {
+	background: url(../img/about-reptile.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.flipped {
+	transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card-front,
+.card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform: scale(1);
+	backface-visibility: hidden;
+	box-sizing: border-box;
+	box-shadow: 5px 5px 2px -2px rgba(0, 0, 0, .2);
+}
+
+/* ==========================================================================
+   Front of Card
+   ========================================================================== */
+   
+.card-front {
+	background-color: #ECECEC;
+
+	.card-name {
+		position: absolute;
+		bottom: 0;
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		background-color: $color-one;
+		color: #FFF;
+		font-weight: bold;
+		text-align: center;
+		padding: 10px 0;
+	}
+
+	.card-title {
+		background-color: $color-two;
+		width: 78px;
+		height: 78px;
+		line-height: 78px;
+		letter-spacing: -1px;
+		text-align: center;
+		border-radius: 50%;
+		position: absolute;
+		font-size: 87%;
+	}
+
+	.top-left {
+		top: 10px;
+		left: 10px;
+	}
+
+	.top-right {
+		top: 10px;
+		right: 10px;
+	}
+
+	.card-front-inner {
+		position: absolute;
+		top: 12px;
+		right: 12px;
+		bottom: 12px;
+		left: 12px;
+		border-radius: 15px;
+		border: 4px solid $color-three;
+		overflow: hidden;
+	}
+
+}
+
+/* ==========================================================================
+   Back of Card
+   ========================================================================== */
+   
+.card-back {
+	background-color: #FFF;
+	transform: rotateY(180deg);
+	padding: 20px;
+
+	.back-name {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 50%;
+		height: 35%;
+		background-color: $color-three;
+		color: #FFF;
+	}
+
+	.back-name-inner {
+		
+		display: table;
+		width: 100%;
+		height: 100%;
+
+		p {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			margin: 0;
+		}
+
+	}
+
+	.card-photo {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 50%;
+		height: 35%;
+	}
+
+	.back-info {
+		position: absolute;
+		top: 35%;
+		height: 65%;
+		left: 0;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 20px;
+	}
+
+}

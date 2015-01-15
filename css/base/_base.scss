@@ -1,0 +1,51 @@
+html {
+	font-family: $base-font;
+}
+
+body {
+	background-color: $color-three;
+	color: $text-color;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;
+}
+
+h2 {
+	font-size: 180%;
+	@include bp-papa-bear {
+		font-size: 240%;
+	}
+}
+
+h3 {
+	font-weight: 400;
+	font-size: 118%;
+	@include bp-papa-bear {
+		font-size: 154%;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	line-height: 1.5;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+p a {
+	text-decoration: underline;
+}

@@ -1,0 +1,386 @@
+/* ==========================================================================
+   Social Icon Navigation
+   ========================================================================== */
+
+.social-icons ul {
+	@include inline-nav;
+	@include container;
+
+	li {
+		@include span(2 of 10);
+		&:last-child {@include last;}
+	}
+
+	a {
+		border-radius: 3px;
+		display: block;
+		background-color: $light-gray;
+		color: $color-one;
+		padding: 10px;
+		text-align: center;
+
+		&:hover {
+			background-color: #FFF;
+			box-shadow: inset 0 0 10px rgba($color-two, .5);
+			color: $color-two;
+		}
+	}
+}
+
+.social-icons-footer ul a {
+	background-color: lighten($light-gray, 5%);
+}
+
+/* ==========================================================================
+   Boxes
+   ========================================================================== */
+
+.section-area {
+	@include vertical-padding(1.5);
+	@include bp-papa-bear {
+		@include vertical-padding(4);
+	}
+}
+
+.section-area-a {
+	background-color: $color-two;
+}
+
+.section-area-b {
+	background-color: $dark-gray;
+}
+
+@include bp-baby-bear {
+	.section-area-mobile-flush {
+		padding: 0;
+		
+		.page-width {
+			padding: 0;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+}
+
+.emphasis-box {
+	@include vertical-spacing(1);
+	@include bp-papa-bear {
+		background-color: lighten($color-two, 33%);
+		padding: 20px;
+	}
+}
+
+/* ==========================================================================
+   Hero Banners
+   ========================================================================== */
+
+.hero {
+	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/pizza.jpg) center center no-repeat;
+	background-size: cover;
+
+	.page-width {
+		@include vertical-padding(4);
+		@include bp-papa-bear {
+			@include vertical-padding(7.5);
+		}
+		position: relative;
+	}
+
+	h1 {
+		color: #FFF;
+		margin: 0;
+		text-align: center;
+		position: relative;
+		top: -.35em;
+	}
+
+	.down {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		margin-left: -16px;
+		@include bp-papa-bear {
+			margin-left: -27px;
+		}
+	}
+
+}
+
+.hero-about {
+	background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .65)), url(../img/ingredients.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.hero-ingredients {
+	background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url(../img/ingredients-2.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.hero-contact {
+	background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url(../img/contact-hero.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+/* ==========================================================================
+   Section Heading
+   ========================================================================== */
+
+.section-heading {
+	text-align: center;
+
+	h2 {
+		@include vertical-spacing(1);
+		position: relative;
+	}
+
+	h2::after {
+		content: "";
+		width: 80px;
+		height: 3px;
+		background-color: $color-one;
+		display: block;
+		position: absolute;
+		bottom: -9px;
+		left: 50%;
+		margin-left: -40px;
+	}
+
+	&.align-left {
+		text-align: left;
+
+		h2::after {
+			left: 0;
+			margin-left: 0;
+		}
+
+	}
+
+	h3 {
+		color: rgba(0, 0, 0, .5);
+	}
+
+}
+
+/* ==========================================================================
+   Feature Tabs
+   ========================================================================== */
+
+.feature-table-nav {
+	
+	@include vertical-spacing(1);
+
+	ul {
+		margin: 0;
+		padding: 0;
+		position: relative;
+		z-index: 30;
+		@include container;
+	}
+
+	li {
+		list-style: none;
+		
+		@include bp-goldilocks-and-up {
+			@include span(4 of 12);
+
+			&:last-child {
+				@include last;
+			}
+		}
+
+	}
+
+	a {
+		display: block;
+		text-align: center;
+		padding: 14px 0;
+		background-color: rgba(0, 0, 0, .06);
+		color: rgba(0, 0, 0, .5);
+
+		@include bp-baby-bear {
+			margin-bottom: 5px;
+		}
+
+		@include bp-papa-bear {
+			padding: 40px 0;
+			font-size: 165%;
+		}
+
+		&:hover {
+			background-color: rgba(0, 0, 0, .12);
+		}
+	}
+
+	li.is-active a {
+		color: #FFF;
+	}
+
+	li:nth-child(1).is-active a {background-color: $color-one;}
+	li:nth-child(2).is-active a {background-color: $color-three;}
+	li:nth-child(3).is-active a {background-color: saturate(darken($color-two, 14%), 20%);}
+	
+}
+
+.tabs-container {
+	position: relative;
+}
+
+.tab {
+	@include clearfix;
+	opacity: 0;
+	transition: opacity .5s ease, transform .5s ease;
+	transform: translate3d(0, -40px, 0);
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 5;
+	backface-visibility: hidden;
+
+	img {
+		display: block;
+		@include vertical-spacing(1);
+	}
+
+	@include bp-baby-bear {
+		.tab-text {
+			@include vertical-spacing(1);
+		}
+	}
+
+	@include bp-papa-bear {
+		p {
+			font-size: 145%;
+		}
+
+		.tab-text {
+			@include span(8 of 12);
+		}
+
+		.tab-btn {
+			@include span(4 of 12 last);
+		}
+	}
+}
+
+.is-active-tab {
+	opacity: 1;
+	position: relative;
+	z-index: 6;
+	transform: translate3d(0, 0, 0);
+
+}
+
+.tab-2 .btn {@include button-color($color-three);}
+.tab-3 .btn {@include button-color(saturate(darken($color-two, 14%), 20%));}
+
+/* ==========================================================================
+   Testimonials
+   ========================================================================== */
+   
+.testimonials {
+	@include container;
+	position: relative;
+	z-index: 5;
+}
+
+.testimonial {
+	@include span(4 of 12);
+
+	@include bp-baby-bear {
+		float: none;
+		padding-right: 0;
+		opacity: 0;
+		transition: opacity .5s ease, transform .5s ease;
+		transform: translate3d(40px, 0, 0);
+		position: absolute;
+		top: 0;
+		width: 100%;
+		@include vertical-spacing(.5);
+		z-index: 5;
+		backface-visibility: hidden;
+	}
+	
+	.testimonial-body {
+		box-sizing: border-box;
+		background-color: #F5F5F5;
+		padding: 30px 30px 80px 30px;
+		color: #FFF;
+	}
+
+	img {
+		width: 75px;
+		height: auto;
+		border-radius: 50%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.quote-author {
+		text-align: center;
+		margin-top: -47px;
+
+		p {
+			color: lighten($text-color, 50%);
+			font-size: 87%;
+		}
+	}
+
+	&:last-child {
+		@include last;
+	}
+
+}
+
+.testimonial:nth-child(1) {
+	.testimonial-body {background-color: $color-one;}
+	img {border: 10px solid $color-one;}
+}
+
+.testimonial:nth-child(2) {
+	.testimonial-body {background-color: $color-two;}
+	img {border: 10px solid $color-two;}
+}
+
+.testimonial:nth-child(3) {
+	.testimonial-body {background-color: $color-three;}
+	img {border: 10px solid $color-three;}
+}
+
+.is-active-testimonial {
+	@include bp-baby-bear {
+		opacity: 1;
+		position: relative;
+		z-index: 6;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.testimonial-pager {
+	position: relative;
+	z-index: 900;
+	text-align: center;
+	
+	@include bp-papa-bear {
+		display: none;
+	}
+
+	span {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		background-color: #999;
+		border-radius: 5px;
+		margin: 0 4px;
+		cursor: pointer;
+	}
+
+	.is-active-pager,
+	span:hover {
+		background-color: #000;
+	}
+}
+

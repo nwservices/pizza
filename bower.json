@@ -1,0 +1,16 @@
+{
+  "name": "pizza-site",
+  "version": "1.0.0",
+  "dependencies": {
+    "hammerjs": "~2.0.4",
+    "masonry": "~3.2.2",
+    "jquery-smooth-scroll": "~1.5.4",
+    "FitText.js": "~1.2.0",
+    "underscore": "~1.7.0",
+    "response.js": "git://github.com/ryanve/response.js.git",
+    "fastclick": "~1.0.3",
+    "imagesloaded": "~3.1.8",
+    "susy": "~2.2.1"
+  },
+  "private": true
+}

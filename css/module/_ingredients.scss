@@ -1,0 +1,52 @@
+.ingredients {
+	@include clearfix;
+}
+
+.gutter-sizer {
+	width: gutter(12);
+}
+
+.item-sizer {
+	width: span(4 of 12);
+}
+
+
+.ingredient,
+.item-sizer {
+	@include vertical-spacing(1);
+	overflow: hidden;
+	@include bp-papa-bear {
+		width: span(4 of 12);
+	}
+	@include bp-goldilocks {
+		width: span(6 of 12);
+	}
+
+	font-size: 90%;
+	color: #FFF;
+	width: 100%;
+}
+
+.w2 {
+	
+	@include bp-papa-bear {
+		width: span(8 of 12);
+	}
+
+	@include bp-goldilocks {
+		width: 100%;
+	}
+}
+
+.ingredient img {
+	display: block;
+	box-sizing: border-box;
+	border: 5px solid darken($dark-gray, 6%);
+	border-bottom: none;
+}
+
+.tile-text {
+	margin-top: -1px;
+	background-color: darken($dark-gray, 6%);
+	padding: 10px 20px;
+}

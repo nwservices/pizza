@@ -1,0 +1,31 @@
+.site-footer {
+	background-color: $light-gray;
+	@include vertical-padding(1);
+	@include bp-papa-bear {
+		@include vertical-padding(2);
+	}
+	font-size: 88%;
+	color: darken($light-gray, 50%);
+
+	a {
+		color: darken($light-gray, 50%);
+	}
+}
+
+@include bp-baby-bear {
+	.footer-text {
+		@include vertical-spacing(1);
+	}
+}
+
+@include bp-papa-bear {
+	.footer-text {
+		@include span(8 of 12);
+	}
+
+	.footer-nav {
+		@include span(4 of 12 last);
+		@include container;
+	}
+}
+

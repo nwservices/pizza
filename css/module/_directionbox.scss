@@ -1,0 +1,176 @@
+$canvasOffset: 75%;
+
+.directions-box {
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+
+	h2 {
+		font-weight: normal;
+		@include vertical-spacing(.5);
+	}
+}
+
+.base-screen {
+	background: linear-gradient(rgba(0, 0, 0, .86), rgba(0, 0, 0, .5)), url(../img/ingredients.jpg) center center no-repeat;
+	background-size: cover;
+	color: #FFF;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	@include vertical-padding(6);
+
+	@include bp-papa-bear {
+		@include vertical-padding(7.5);
+	}
+}
+
+.screen {
+	box-sizing: border-box;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	color: #FFF;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.screen-inner {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.screen-inner-most {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: $page-gutter;
+	padding-right: $page-gutter;
+}
+
+/* ==========================================================================
+   Off Canvas Graphic Screens
+   ========================================================================== */
+   
+.left-screen {
+	width: $canvasOffset;
+	height: 100%;
+	top: 0;
+	left: (-$canvasOffset);
+	background: linear-gradient(rgba(0, 0, 0, .82), rgba(0, 0, 0, .82)), url(../img/pepper.jpg) center center no-repeat;
+	background-size: cover;
+	@include bp-baby-bear {
+		left: -100%;
+		width: 100%;
+	}
+}
+
+.up-screen {
+	width: 100%;
+	height: $canvasOffset;
+	top: (-$canvasOffset);
+	left: 0;
+	background: linear-gradient(rgba(0, 0, 0, .68), rgba(0, 0, 0, .68)), url(../img/garlic.jpg) center center no-repeat;
+	background-size: cover;
+	@include bp-baby-bear {
+		top: -100%;
+		height: 100%;
+	}
+}
+
+.right-screen {
+	width: $canvasOffset;
+	height: 100%;
+	top: 0;
+	right: (-$canvasOffset);
+	background: linear-gradient(rgba(0, 0, 0, .73), rgba(0, 0, 0, .73)), url(../img/tomato.jpg) center center no-repeat;
+	background-size: cover;
+	@include bp-baby-bear {
+		right: -100%;
+		width: 100%;
+	}
+}
+
+.down-screen {
+	width: 100%;
+	height: $canvasOffset;
+	bottom: (-$canvasOffset);
+	left: 0;
+	background: linear-gradient(rgba(0, 0, 0, .68), rgba(0, 0, 0, .68)), url(../img/cheese.jpg) center center no-repeat;
+	background-size: cover;
+	@include bp-baby-bear {
+		bottom: -100%;
+		height: 100%;
+	}
+}
+
+.directions-canvas {
+	transform: translate3d(0, 0, 0);
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	position: relative;
+}
+
+.direction-trigger {
+	cursor: pointer;
+	color: $color-two;
+	font-weight: bold;
+	display: inline-block;
+	padding: 2px 5px;
+	
+	margin-left: 3px;
+	margin-right: 3px;
+	@include vertical-spacing(1);
+	@include bp-papa-bear {
+		margin-left: 6px;
+		margin-right: 6px;
+	}
+
+	i {
+		display: block;
+	}
+
+}
+
+.direction-trigger:hover {
+	color: $color-one;
+}
+
+html.csstransforms3d {
+	
+	.directions-canvas {
+		transition: all .33s $standard-ease;
+	}
+
+	.pushed-right {
+		left: 0;
+		transform: translate3d($canvasOffset, 0, 0);
+		@include bp-baby-bear {
+			transform: translate3d(100%, 0, 0);
+		}
+	}
+
+	.pushed-left {
+		transform: translate3d((-$canvasOffset), 0, 0);
+		@include bp-baby-bear {
+			transform: translate3d(-100%, 0, 0);
+		}
+	}
+
+	.pushed-down {
+		transform: translate3d(0, $canvasOffset, 0);
+		@include bp-baby-bear {
+			transform: translate3d(0, 100%, 0);
+		}
+	}
+
+	.pushed-up {
+		transform: translate3d(0, (-$canvasOffset), 0);
+		@include bp-baby-bear {
+			transform: translate3d(0, -100%, 0);
+		}
+	}
+
+}

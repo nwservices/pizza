@@ -1,0 +1,159 @@
+.site-header {
+	color: #FFF;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+	left: 0;
+	transition: all 0.6s $standard-ease;
+	
+	.logo {
+		display: block;
+		padding: 15px 0;
+		font-weight: bold;
+		color: $color-two;
+
+		a {
+			color: $color-two;
+		}
+
+		@include bp-papa-bear {
+			float: left;
+			padding: 15px 15px 15px 0;
+		}
+
+	}
+
+	nav {
+		display: none;
+
+		@include bp-papa-bear {
+			display: block;
+			float: left;
+
+			ul {
+				@include inline-nav;	
+			}
+			
+			a {
+				color: #FFF;
+				display: block;
+				text-decoration: none;
+				padding: 15px 20px;
+			}
+		}
+	}
+
+	.btn {
+
+		@include bp-baby-bear {
+			margin-top: 3px;
+			padding: 0;
+			color: #FFF;
+			font-size: 80%;
+			background-color: transparent;
+			position: absolute;
+			right: $page-gutter;
+			top: 15px;
+
+			&:hover {
+				color: $color-two;
+				background-color: transparent;
+			}
+		}
+
+		@include bp-papa-bear {
+			color: #000;
+			@include button-color($color-two);
+			margin-top: 7px;
+			float: right;
+		}
+
+	}
+
+}
+
+.site-header-inner {
+	
+	@extend .page-container;
+	@include clearfix;
+
+	background-color: $color-one;
+
+	@include bp-baby-bear {
+		text-align: center;
+	}
+
+}
+
+.menu-toggle {
+
+	display: block;
+	cursor: pointer;
+	position: absolute;
+	padding: 15px $page-gutter;
+	top: 0;
+	left: 0;
+
+	@include bp-papa-bear {
+		display: none;
+	}
+}
+
+html.csstransforms3d .mobile-menu {
+	transform: translate3d(-260px, 0, 0);
+	left: 0;
+}
+
+.mobile-menu {
+	
+	@include bp-papa-bear {
+		display: none;
+	}
+
+	
+	transition: all 0.6s $standard-ease;
+	width: 260px;
+	height: 100%;
+	background-color: $color-one;
+	display: block;
+	position: fixed;
+	top: 0;
+	left: -260px;
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		list-style: none;
+		border-bottom: 1px solid darken($color-one, 8%);
+	}
+
+	a {
+		color: $color-two;
+		display: block;
+		padding: 10px 20px;
+		font-weight: bold;
+	}
+
+	a:hover, a:active {
+		background-color: #FFF;
+	}
+}
+
+.mobile-menu.is-visible {
+	left: 0;
+}
+
+html.csstransforms3d .mobile-menu.is-visible {
+	transform: translate3d(0, 0, 0);
+}
+
+.close-mobile-menu {
+	color: #FFF;
+	cursor: pointer;
+	margin-left: 20px;
+	padding: 15px 0;
+	display: inline-block;
+}

@@ -1,0 +1,37 @@
+.btn {
+	cursor: pointer;
+	display: inline-block;
+	padding: 8px 26px;
+	background-color: $color-one;
+	color: #FFF;
+	border-radius: 3px;
+	transition: background-color .2s ease;
+}
+
+.btn:hover {
+	background-color: darken($color-one, 7%);
+}
+
+.btn-large {
+	padding: 12px 38px;
+	@include bp-papa-bear {
+		font-size: 155%;
+	}
+}
+
+.btn-fill {
+	text-align: center;
+	@extend .btn-large;
+	display: block;
+}
+
+.block-btn {
+	display: inline-block;
+	background-color: $color-one;
+	color: #FFF;
+	padding: 10px;
+	cursor: pointer;
+	@include bp-papa-bear {
+		padding: 20px;
+	}
+}
