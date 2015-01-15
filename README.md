@@ -1,6 +1,6 @@
 # Pizzeria Website
 
-This project contains a website for a fictional pizzeria.
+This project contains a website for a fictional pizzeria ([view the website on GitHub Pages](https://github.com/LearnWebCode/pizza)).
 
 ## Before You Get Started
 
