@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Social Icon Navigation
+   ========================================================================== */
+
+.social-icons ul {
+	@include inline-nav;
+	@include container;
+
+	li {
+		@include span(2 of 10);
+		&:last-child {@include last;}
+	}
+
+	a {
+		border-radius: 3px;
+		display: block;
+		background-color: $light-gray;
+		color: $color-one;
+		padding: 10px;
+		text-align: center;
+
+		&:hover {
+			background-color: #FFF;
+			box-shadow: inset 0 0 10px rgba($color-two, .5);
+			color: $color-two;
+		}
+	}
+}
+
+.social-icons-footer ul a {
+	background-color: lighten($light-gray, 5%);
+}
+
+/* ==========================================================================
+   Boxes
+   ========================================================================== */
+
+.section-area {
+	@include vertical-padding(1.5);
+	@include bp-papa-bear {
+		@include vertical-padding(4);
+	}
+}
+
+.section-area-a {
+	background-color: $color-two;
+}
+
+.section-area-b {
+	background-color: $dark-gray;
+}
+
+@include bp-baby-bear {
+	.section-area-mobile-flush {
+		padding: 0;
+		
+		.page-width {
+			padding: 0;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+}
+
+.emphasis-box {
+	@include vertical-spacing(1);
+	@include bp-papa-bear {
+		background-color: lighten($color-two, 33%);
+		padding: 20px;
+	}
+}
+
+/* ==========================================================================
+   Hero Banners
+   ========================================================================== */
+
+.hero {
+	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/pizza.jpg) center center no-repeat;
+	background-size: cover;
+
+	.page-width {
+		@include vertical-padding(4);
+		@include bp-papa-bear {
+			@include vertical-padding(7.5);
+		}
+		position: relative;
+	}
+
+	h1 {
+		color: #FFF;
+		margin: 0;
+		text-align: center;
+		position: relative;
+		top: -.35em;
+	}
+
+	.down {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		margin-left: -16px;
+		@include bp-papa-bear {
+			margin-left: -27px;
+		}
+	}
+
+}
+
+.hero-about {
+	background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .65)), url(../img/ingredients.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.hero-ingredients {
+	background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url(../img/ingredients-2.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.hero-contact {
+	background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url(../img/contact-hero.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+/* ==========================================================================
+   Section Heading
+   ========================================================================== */
+
+.section-heading {
+	text-align: center;
+
+	h2 {
+		@include vertical-spacing(1);
+		position: relative;
+	}
+
+	h2::after {
+		content: "";
+		width: 80px;
+		height: 3px;
+		background-color: $color-one;
+		display: block;
+		position: absolute;
+		bottom: -9px;
+		left: 50%;
+		margin-left: -40px;
+	}
+
+	&.align-left {
+		text-align: left;
+
+		h2::after {
+			left: 0;
+			margin-left: 0;
+		}
+
+	}
+
+	h3 {
+		color: rgba(0, 0, 0, .5);
+	}
+
+}

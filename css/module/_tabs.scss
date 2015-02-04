@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Feature Tabs
+   ========================================================================== */
+
+.feature-table-nav {
+	
+	@include vertical-spacing(1);
+
+	ul {
+		margin: 0;
+		padding: 0;
+		position: relative;
+		z-index: 30;
+		@include container;
+	}
+
+	li {
+		list-style: none;
+		
+		@include bp-goldilocks-and-up {
+			@include span(4 of 12);
+
+			&:last-child {
+				@include last;
+			}
+		}
+
+	}
+
+	a {
+		display: block;
+		text-align: center;
+		padding: 14px 0;
+		background-color: rgba(0, 0, 0, .06);
+		color: rgba(0, 0, 0, .5);
+
+		@include bp-baby-bear {
+			margin-bottom: 5px;
+		}
+
+		@include bp-papa-bear {
+			padding: 40px 0;
+			font-size: 165%;
+		}
+
+		&:hover {
+			background-color: rgba(0, 0, 0, .12);
+		}
+	}
+
+	li.is-active a {
+		color: #FFF;
+	}
+
+	li:nth-child(1).is-active a {background-color: $color-one;}
+	li:nth-child(2).is-active a {background-color: $color-three;}
+	li:nth-child(3).is-active a {background-color: saturate(darken($color-two, 14%), 20%);}
+	
+}
+
+.tabs-container {
+	position: relative;
+}
+
+.tab {
+	@include clearfix;
+	opacity: 0;
+	transition: opacity .5s ease, transform .5s ease;
+	transform: translate3d(0, -40px, 0);
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 5;
+	backface-visibility: hidden;
+
+	img {
+		display: block;
+		@include vertical-spacing(1);
+	}
+
+	@include bp-baby-bear {
+		.tab-text {
+			@include vertical-spacing(1);
+		}
+	}
+
+	@include bp-papa-bear {
+		p {
+			font-size: 145%;
+		}
+
+		.tab-text {
+			@include span(8 of 12);
+		}
+
+		.tab-btn {
+			@include span(4 of 12 last);
+		}
+	}
+}
+
+.is-active-tab {
+	opacity: 1;
+	position: relative;
+	z-index: 6;
+	transform: translate3d(0, 0, 0);
+
+}
+
+.tab-2 .btn {@include button-color($color-three);}
+.tab-3 .btn {@include button-color(saturate(darken($color-two, 14%), 20%));}

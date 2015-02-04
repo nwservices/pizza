@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Testimonials
+   ========================================================================== */
+   
+.testimonials {
+	@include container;
+	position: relative;
+	z-index: 5;
+}
+
+.testimonial {
+	@include span(4 of 12);
+
+	@include bp-baby-bear {
+		float: none;
+		padding-right: 0;
+		opacity: 0;
+		transition: opacity .5s ease, transform .5s ease;
+		transform: translate3d(40px, 0, 0);
+		position: absolute;
+		top: 0;
+		width: 100%;
+		@include vertical-spacing(.5);
+		z-index: 5;
+		backface-visibility: hidden;
+	}
+	
+	.testimonial-body {
+		box-sizing: border-box;
+		background-color: #F5F5F5;
+		padding: 30px 30px 80px 30px;
+		color: #FFF;
+	}
+
+	img {
+		width: 75px;
+		height: auto;
+		border-radius: 50%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.quote-author {
+		text-align: center;
+		margin-top: -47px;
+
+		p {
+			color: lighten($text-color, 50%);
+			font-size: 87%;
+		}
+	}
+
+	&:last-child {
+		@include last;
+	}
+
+}
+
+.testimonial:nth-child(1) {
+	.testimonial-body {background-color: $color-one;}
+	img {border: 10px solid $color-one;}
+}
+
+.testimonial:nth-child(2) {
+	.testimonial-body {background-color: $color-two;}
+	img {border: 10px solid $color-two;}
+}
+
+.testimonial:nth-child(3) {
+	.testimonial-body {background-color: $color-three;}
+	img {border: 10px solid $color-three;}
+}
+
+.is-active-testimonial {
+	@include bp-baby-bear {
+		opacity: 1;
+		position: relative;
+		z-index: 6;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.testimonial-pager {
+	position: relative;
+	z-index: 900;
+	text-align: center;
+	
+	@include bp-papa-bear {
+		display: none;
+	}
+
+	span {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		background-color: #999;
+		border-radius: 5px;
+		margin: 0 4px;
+		cursor: pointer;
+	}
+
+	.is-active-pager,
+	span:hover {
+		background-color: #000;
+	}
+}

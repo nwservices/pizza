@@ -1,6 +1,6 @@
 /* Tools */
 @import '../bower_components/susy/sass/susy';
-@import 'tools/site-settings';
+@import 'site-settings';
 @import 'tools/mixins';
 
 /* Normalize and Element Defaults */
@@ -14,7 +14,9 @@
 @import 'layout/footer';
 
 /* Modules */
-@import 'module/module';
+@import 'module/generic-module';
+@import 'module/testimonial';
+@import 'module/tabs';
 @import 'module/directionbox';
 @import 'module/cards';
 @import 'module/ingredients';

@@ -34,19 +34,19 @@ module.exports = function(grunt) {
       }
     },
 
-    imagemin: {
-      dynamic: {
-        options: {
-          optimizationLevel: 7,
-        },
-        files: [{
-          expand: true,
-          cwd: 'img/',
-          src: ['**/*.{png,jpg}'],
-          dest: 'dist/img/'
-        }]
-      }
-    },
+//    imagemin: {
+//      dynamic: {
+//        options: {
+//          optimizationLevel: 7,
+//        },
+//        files: [{
+//          expand: true,
+//          cwd: 'img/',
+//          src: ['**/*.{png,jpg}'],
+//          dest: 'dist/img/'
+//        }]
+//      }
+//    },
 
     sass: {
     	dist: {
@@ -119,7 +119,18 @@ module.exports = function(grunt) {
 	    		dest: 'dist/js/',
 	    		expand: true
     		}]
-    	}
+    	},
+      // imageMin build currently failing
+      // if imageMin is working correctly do not copy images like this
+      // instead run imageMin to send minned images to dist folder
+      img: {
+        files: [ {
+          cwd: 'img/',
+          src: '**/*',
+          dest: 'dist/img/',
+          expand: true
+        }]
+      }
     },
 
     includereplace: {
@@ -163,7 +174,7 @@ module.exports = function(grunt) {
     'autoprefixer',
     'bower_concat',
     'uglify',
-    'imagemin',
+    //'imagemin',
     'includereplace'
   ]);
 
